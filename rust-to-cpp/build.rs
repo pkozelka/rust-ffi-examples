@@ -2,7 +2,8 @@ extern crate gcc;
 
 fn main() {
     gcc::Build::new()
-        .file("src/triple.cpp")
+        .file("src/xyz/triple.cpp")
+        .include("src") // NOTE: inclusion basedir(s) can be everywhere
         .cpp(true)
-        .compile("libtriple.a");
+        .compile("libtriple_WHATEVER.a");  // NOTE: name of the created library does not matter
 }
